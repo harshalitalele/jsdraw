@@ -78,16 +78,6 @@
         return actionBoundaries;
     }
     
-    function addHighlightAction(implementedAction, baseElement) {
-        implementedAction.element.addEventListener("mouseenter", function (event) {
-            var position = implementedAction.getHighlightPosition();
-            ann.Editor("highlight", position, implementedAction, baseElement.parentNode);
-            setTimeout(function () {
-                ann.hideEditor();
-            }, 2000);
-        });
-    }
-    
     ann.newFreeformAction = function (annotation, actionBoundaries) {
         this.type = "New Freeform";
         this.color = "#00ff00";
@@ -184,8 +174,6 @@
         this.element.style.left = this.actionBoundaries.x + "px";
         
         baseElement.appendChild(this.element);
-        
-        addHighlightAction(this, baseElement.firstElementChild);
     };
     
     ann.newFreeformAction.prototype.deleteAnnotation = function () {
