@@ -6,6 +6,9 @@
                 height: 500px;
                 border: 2px solid black;
             }
+            .inner-content {
+                padding: 15px;
+            }
         </style>
     </head>
     <body>
@@ -14,12 +17,18 @@
                 <button onclick="initiateDrawing()">Create Component</button>
             </div>
             <div id="drawing-board">
-                <div>
-                    <input type="text" id="msg" value="Hello World!"/>
-                </div>
-                <div>
-                    <button onclick="showMsg()">Show Message</button>
-                </div>                
+                <div class="inner-content">
+                    <div>
+                        This is Lorem Epsum normal regular text.
+                        Try selecting this after drawing on this.
+                    </div>
+                    <div>
+                        <input type="text" id="msg" value="Hello World!"/>
+                    </div>
+                    <div>
+                        <button onclick="showMsg()">Show Message</button>
+                    </div>
+                </div>             
             </div>        
         </div>
         <div id="libraries">
