@@ -13,3 +13,6 @@ Step I:
 3. make components draggable and resizeable and restructurable
 4. save as jpeg
 5. copy paste components
+
+1. basic drawing board
+2. download drawn things option
