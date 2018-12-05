@@ -172,6 +172,7 @@
         this.element.style.position = "absolute";
         this.element.style.top = this.actionBoundaries.y + "px";
         this.element.style.left = this.actionBoundaries.x + "px";
+        this.element.style.pointerEvents = "none";
         
         baseElement.appendChild(this.element);
     };
