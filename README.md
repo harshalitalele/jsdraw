@@ -6,9 +6,12 @@ Highlights of the Project:
 Priority list:
 1. download option or browser print option
 2. compare performance with canvas board beside
-3. editable (drag, zoom) option
-4. copy paste option
-5. binding events option
+    - achieve above mentioned highlights in implemented freeformDrawing
+    - use paperjs or any other canvas library to achieve above mentioned highlights
+3. Write comparison in words and instructions to test
+4. build process to obfuscate code
+5. copy paste option
+6. binding events option
 
 Applications:
 1. drawing library on blogs
