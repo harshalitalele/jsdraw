@@ -1,3 +1,8 @@
+Highlights of the Project:
+
+1. Drawings are like HTML elements, can be dragged and below html actions can still be persisted
+2. In case of zooming of the drawing and dragging, no need to redraw again and again, which it would have been otherwise in case of canvas
+
 To Do items:
 
 1. draw on user actions
