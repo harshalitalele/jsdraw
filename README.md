@@ -10,6 +10,11 @@ Priority list:
 4. copy paste option
 5. binding events option
 
+Applications:
+1. drawing library on blogs
+2. chrome plugin
+3. code-free game development
+
 1. basic drawing board
 2. download drawn things option
 
