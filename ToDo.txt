@@ -1,0 +1,11 @@
+To Do:
+1. have a drawing board class and other classes inside drawingboard class
+    - buttons and events like Save and Clear
+    - implementedActions
+        - FreeformAction
+        - RectangleAction
+        - CircularAction
+    - color change
+    - 
+2. Think of having a Web Component - https://developer.mozilla.org/en-US/docs/Web/Web_Components
+3. of Chrome extension
