@@ -6,7 +6,7 @@
         clearAllBtn: true
     };
     
-    function addMarkers(options, toolbox, onMarkerCreated) {
+    function addMarkers(options, toolbox, onTypeSelected, onMarkerCreated) {
         for(var m in options) {
             var mType = options[m],
                 mElem = document.createElement("div"),
@@ -14,11 +14,17 @@
             mStyle.height = "32px";
             mStyle.width = "32px";
             mStyle.margin = "5px";
+            mStyle.border = "1px solid black";
+            mStyle.borderRadius = "4px";
             switch(mType) {
                 case "freeform":
                     mElem.innerText = "F";
+                    mStyle.textAlign = "center";
                     mElem.addEventListener("created", function(e) {
                         onMarkerCreated(e);
+                    });
+                    mElem.addEventListener("click", function(e) {
+                        onTypeSelected("freeform");
                     });
                     break;
             }            
@@ -53,11 +59,22 @@
             console.error("Toolbox: overlay property does not exists");
         }
         
+        var actions = new b.actions(options.overlay);
+        actions.attachActions();
+        
         function onMarkerCreated(marker) {
             allMarkers.push(marker);
         }
         
-        addMarkers(options.markers, toolboxElem, onMarkerCreated);
+        function onTypeSelected(type) {
+            switch(type) {
+                case "freeform":
+                    actions.setBehavior(new b.freeformAction());
+                    break;
+            }
+        }
+        
+        addMarkers(options.markers, toolboxElem, onTypeSelected, onMarkerCreated);
         
         b.Toolbox.prototype.get = function() {
             return toolboxElem;

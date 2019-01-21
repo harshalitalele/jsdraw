@@ -19,7 +19,6 @@ function DrawingBoard() {
     b.Board = function(options) {
         options = Object.assign(defaultOptions, options);
         //To Do: Remove all extra options if there from options by comparing with defaultOptions object
-        this.currentDrawStyle = null;
         //To Do: Check if we need below 2 properties
         this.saveHandler = options.saveHandler;
         this.clearAllHandler = options.clearAllHandler;
@@ -36,8 +35,6 @@ function DrawingBoard() {
         this.hideToolbox = function() {
             this.toolbox.hide();
             overlay.hide();
-        };
-        
-        
+        };        
     }
 }(DrawingBoard));
