@@ -156,7 +156,7 @@
             point1 = points[0],
             ptIndex;
         console.log("Points before " + points.length);
-        this.points = zipPoints(points, 0.5);
+        points = zipPoints(points, 0.15);
         console.log("Now reduced to " + points.length);
         
         element.setAttribute("id", "freeform-annotation");
@@ -201,6 +201,8 @@
         this.element.style.position = "absolute";
         this.element.style.top = this.actionBoundaries.y + "px";
         this.element.style.left = this.actionBoundaries.x + "px";
+        
+        this.element.style.pointerEvents = "none";
         
         baseElement.appendChild(this.element);
     };
