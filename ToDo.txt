@@ -1,3 +1,14 @@
+Priority To Do:
+7. segregate folder structure
+2. build process
+8. code comments and license
+1. Sample webpage on index.html (data - how you can click even after drawing annotations)
+3. decorative toolbox
+4. development
+5. onclick color fill markers
+6. save markers in localStorage and show drawing again later
+9. update readme page on github
+
 To Do:
 1. have a drawing board class and other classes inside drawingboard class
     - buttons and events like Save and Clear
