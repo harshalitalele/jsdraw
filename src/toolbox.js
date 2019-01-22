@@ -6,7 +6,7 @@
         clearAllBtn: true
     };
     
-    function addMarkers(options, toolbox, onTypeSelected, onMarkerCreated) {
+    function addMarkersOptions(options, toolbox, onTypeSelected) {
         for(var m in options) {
             var mType = options[m],
                 mElem = document.createElement("div"),
@@ -20,9 +20,6 @@
                 case "freeform":
                     mElem.innerText = "F";
                     mStyle.textAlign = "center";
-                    mElem.addEventListener("created", function(e) {
-                        onMarkerCreated(e);
-                    });
                     mElem.addEventListener("click", function(e) {
                         onTypeSelected("freeform");
                     });
@@ -62,19 +59,23 @@
         var actions = new b.actions(options.overlay);
         actions.attachActions();
         
-        function onMarkerCreated(marker) {
+        function onMarkerCreatedHandler(marker) {
             allMarkers.push(marker);
+            alert(JSON.stringify(allMarkers));
         }
         
         function onTypeSelected(type) {
+            var currentAction = null;
             switch(type) {
                 case "freeform":
-                    actions.setBehavior(new b.freeformAction());
+                    currentAction = new b.freeformAction();
                     break;
             }
+            currentAction.setUpHandler(onMarkerCreatedHandler);
+            actions.setBehavior(currentAction);
         }
         
-        addMarkers(options.markers, toolboxElem, onTypeSelected, onMarkerCreated);
+        addMarkersOptions(options.markers, toolboxElem, onTypeSelected);
         
         b.Toolbox.prototype.get = function() {
             return toolboxElem;

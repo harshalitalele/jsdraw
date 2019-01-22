@@ -88,6 +88,7 @@
         Object.assign(this, marker);
         this.actionBoundaries = actionBoundaries || (this.points && this.points.length > 0 ? getActionBoundaries(this.points) : {x: 0, y: 0, width: 0, height: 0});
         this.element = null;
+        this.upHandler = null;
     };
     
     b.freeformAction.prototype.actionChangeBehavior = function (baseElement, point) {
@@ -120,6 +121,7 @@
         this.showAnnotation(this.points, baseElement.parentNode);
         
         actionCompleted = true;
+        this.upHandler(this);
     };
     
     b.freeformAction.prototype.fillColor = function (color) {
@@ -205,6 +207,10 @@
         this.element.style.pointerEvents = "none";
         
         baseElement.appendChild(this.element);
+    };
+    
+    b.freeformAction.prototype.setUpHandler = function (upHandler) {
+        this.upHandler = upHandler;
     };
     
     b.freeformAction.prototype.deleteAnnotation = function () {
