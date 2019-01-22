@@ -28,8 +28,6 @@ function DrawingBoard() {
         this.toolbox = new b.Toolbox({
             overlay: overlay.canvas,
             controls: {
-                saveBtn: true,
-                clearAllBtn: true,
                 saveHandler: function(markers) {
                     alert(JSON.stringify(markers));
                 },

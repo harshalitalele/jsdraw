@@ -3,11 +3,7 @@
     var defaultOptions = {
         markers: ["freeform"],
         controls: {
-            saveBtn: true,
-            clearAllBtn: true,
-            saveHandler: function() {
-                //
-            },
+            saveHandler: function() {},
             clearAllHandler: function() {}
         }
     };
@@ -36,7 +32,7 @@
     }
     
     function addButtonControls(options, toolbox) {
-        for(var c in options) {
+        for(var c in options) {            
             if(options[c]) {
                 var btn = document.createElement("button"),
                     btnStyle = btn.style;
@@ -46,13 +42,13 @@
                 btnStyle.border = "1px solid black";
                 btnStyle.borderRadius = "4px";
                 switch(c) {
-                    case "saveBtn":
+                    case "saveHandler":
                         btn.innerText = "S";
                         btn.addEventListener("click", function(e) {
                             options.saveHandler();
                         });
                         break;
-                    case "clearAllBtn":
+                    case "clearAllHandler":
                         btn.innerText = "X";
                         btn.addEventListener("click", function(e) {
                             options.clearAllHandler();
@@ -94,11 +90,23 @@
         var actions = new b.actions(options.overlay);
         actions.attachActions();
         
+        function showCanvas() {
+            options.overlay.style.display = "block";
+        }
+        
+        function hideCanvas() {
+            var canvas = options.overlay;
+            canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
+            canvas.style.display = "none";
+        }
+        
         function onMarkerCreatedHandler(marker) {
+            hideCanvas();
             allMarkers.push(marker);
         }
         
         function onTypeSelected(type) {
+            showCanvas();
             var currentAction = null;
             switch(type) {
                 case "freeform":
@@ -115,6 +123,10 @@
             parentSave(allMarkers);
         };
         options.controls.clearAllHandler = function() {
+            for(var m in allMarkers) {
+                allMarkers[m].deleteAnnotation();
+            }
+            allMarkers = [];
             parentClear(allMarkers);
         };
         
