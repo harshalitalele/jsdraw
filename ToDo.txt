@@ -1,5 +1,5 @@
 Priority To Do:
-7. segregate folder structure
+(Done) 7. segregate folder structure
 2. build process
 8. code comments and license
 1. Sample webpage on index.html (data - how you can click even after drawing annotations)
