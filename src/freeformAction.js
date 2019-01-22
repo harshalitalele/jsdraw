@@ -118,7 +118,7 @@
         this.points.push(point);
         updateActionBoundaries(point, this.actionBoundaries);
         
-        this.showAnnotation(this.points, baseElement.parentNode);
+        this.showMarker(this.points, baseElement.parentNode);
         
         actionCompleted = true;
         this.upHandler(this);
@@ -152,7 +152,7 @@
         canvasElem.style.height = "100%";
     };
     
-    b.freeformAction.prototype.showAnnotation = function (points, baseElement) {
+    b.freeformAction.prototype.showMarker = function (points, baseElement) {
         
         var element = document.createElement("div"),
             point1 = points[0],
@@ -161,7 +161,7 @@
         points = zipPoints(points, 0.15);
         console.log("Now reduced to " + points.length);
         
-        element.setAttribute("id", "freeform-annotation");
+        element.setAttribute("id", "freeform-marker");
         
         //if this.actionBoundaries not there get them from points and set them
         if (!this.actionBoundaries || this.actionBoundaries.width === 0) {
@@ -213,7 +213,7 @@
         this.upHandler = upHandler;
     };
     
-    b.freeformAction.prototype.deleteAnnotation = function () {
+    b.freeformAction.prototype.deleteMarker = function () {
         this.element.parentNode.removeChild(this.element);
     };
     

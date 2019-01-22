@@ -124,7 +124,7 @@
         };
         options.controls.clearAllHandler = function() {
             for(var m in allMarkers) {
-                allMarkers[m].deleteAnnotation();
+                allMarkers[m].deleteMarker();
             }
             allMarkers = [];
             parentClear(allMarkers);
