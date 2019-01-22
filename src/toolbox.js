@@ -2,8 +2,14 @@
     
     var defaultOptions = {
         markers: ["freeform"],
-        saveBtn: true,
-        clearAllBtn: true
+        controls: {
+            saveBtn: true,
+            clearAllBtn: true,
+            saveHandler: function() {
+                //
+            },
+            clearAllHandler: function() {}
+        }
     };
     
     function addMarkersOptions(options, toolbox, onTypeSelected) {
@@ -26,6 +32,35 @@
                     break;
             }            
             toolbox.appendChild(mElem);
+        }
+    }
+    
+    function addButtonControls(options, toolbox) {
+        for(var c in options) {
+            if(options[c]) {
+                var btn = document.createElement("button"),
+                    btnStyle = btn.style;
+                btnStyle.width = "32px";
+                btnStyle.height = "32px";
+                btnStyle.margin = "5px";
+                btnStyle.border = "1px solid black";
+                btnStyle.borderRadius = "4px";
+                switch(c) {
+                    case "saveBtn":
+                        btn.innerText = "S";
+                        btn.addEventListener("click", function(e) {
+                            options.saveHandler();
+                        });
+                        break;
+                    case "clearAllBtn":
+                        btn.innerText = "X";
+                        btn.addEventListener("click", function(e) {
+                            options.clearAllHandler();
+                        });
+                        break;
+                }
+                toolbox.appendChild(btn);
+            }
         }
     }
     
@@ -61,7 +96,6 @@
         
         function onMarkerCreatedHandler(marker) {
             allMarkers.push(marker);
-            alert(JSON.stringify(allMarkers));
         }
         
         function onTypeSelected(type) {
@@ -75,7 +109,17 @@
             actions.setBehavior(currentAction);
         }
         
+        var parentSave = options.controls.saveHandler,
+            parentClear = options.controls.clearAllHandler;
+        options.controls.saveHandler = function() {
+            parentSave(allMarkers);
+        };
+        options.controls.clearAllHandler = function() {
+            parentClear(allMarkers);
+        };
+        
         addMarkersOptions(options.markers, toolboxElem, onTypeSelected);
+        addButtonControls(options.controls, toolboxElem);
         
         b.Toolbox.prototype.get = function() {
             return toolboxElem;

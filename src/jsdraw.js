@@ -26,7 +26,15 @@ function DrawingBoard() {
         var overlay = new b.Overlay(options.elemProp);
         
         this.toolbox = new b.Toolbox({
-            overlay: overlay.canvas
+            overlay: overlay.canvas,
+            controls: {
+                saveBtn: true,
+                clearAllBtn: true,
+                saveHandler: function(markers) {
+                    alert(JSON.stringify(markers));
+                },
+                clearAllHandler: function() {}
+            }
         });
         this.showToolbox = function() {
             this.toolbox.show();
