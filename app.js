@@ -1,10 +1,10 @@
-var annoBoard = new Annotation("drawing-board");
+function showMsg() {
+    var msg = document.getElementById("msg").value;
+    alert(msg);
+}
 
 function initiateDrawing() {
     console.log("drawing has been initiated...");
-    annoBoard.drawAnnotation();
-}
-
-function download() {
-    var downloadElem = document.getElementById("drawing-board");
+    var b1 = new DrawingBoard();
+    console.log("b1: " + JSON.stringify(b1));
 }
