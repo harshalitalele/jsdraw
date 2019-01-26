@@ -4,7 +4,7 @@ Priority To Do:
 (Done) 8. license
 (Done) 1. Sample webpage on index.html (data - how you can click even after drawing annotations)
 (Done) 3. decorative toolbox
-12. update readme.md
+(Done) 12. update readme.md
 13. use royalty free image
 4. development
 5. onclick color fill markers
