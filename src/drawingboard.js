@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-function DrawingBoard() {
-    return new DrawingBoard.Board();
+function DrawingBoard(options) {
+    return new DrawingBoard.Board(options);
 }
 
 (function(b) {
@@ -44,7 +44,7 @@ function DrawingBoard() {
             overlay: overlay.canvas,
             controls: {
                 saveHandler: function(markers) {
-                    alert(JSON.stringify(markers));
+                    options.saveHandler(markers);
                 },
                 clearAllHandler: function() {}
             }
