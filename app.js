@@ -7,7 +7,7 @@ function showUseCases() {
     }
 }
 
-var b1 = new DrawingBoard({
+var myboard = new DrawingBoard({
     saveHandler: function(data) {
         alert(JSON.stringify(data));
     }
