@@ -3,7 +3,7 @@ Priority To Do:
 (Done) 2. build process
 (Done) 8. license
 (Done) 1. Sample webpage on index.html (data - how you can click even after drawing annotations)
-3. decorative toolbox
+(Done) 3. decorative toolbox
 4. development
 5. onclick color fill markers
 6. save markers in localStorage and show drawing again later
