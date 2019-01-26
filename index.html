@@ -1,33 +1,31 @@
 <html>
     <head>
         <style>
-            #drawing-board {
-                width: 500px;
-                height: 500px;
-                border: 2px solid black;
-            }
-            .inner-content {
-                padding: 15px;
+            #exampleUseCases {
+                display: none;
             }
         </style>
+        <title>jsdraw</title>
     </head>
     <body>
         <div>
-            <div id="drawing-board">
-                <div class="inner-content">
-                    <div>
-                        This is Lorem Epsum normal regular text.
-                        Try selecting this after drawing on this.
-                    </div>
-                    <div>
-                        <input type="text" id="msg" value="Hello World!"/>
-                    </div>
-                    <div>
-                        <button onclick="showMsg()">Show Message</button>
-                    </div>
-                </div>             
-            </div>        
+            <h2>jsdraw</h2>
+            <p>
+                This library can be used to create freehand drawing over any HTML element or set of elements, without losing any interaction with the base HTML element/s.
+            </p>
         </div>
+        <hr/>
+        <div>
+            <b onclick="showUseCases()">Click here to read the example use case</b>
+            <span id="exampleUseCases">
+                <br/>
+                <ul>
+                    <li>Doodle over an image element</li>
+                    <li>Mark over a blogpost or a webpage to make notes</li>
+                </ul>
+            </span>
+        </div>
+        <hr/>
         <div id="libraries">
             <script src="src/drawingboard.js"></script>
             <script src="src/sub-elements/toolbox.js"></script>

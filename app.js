@@ -1,6 +1,10 @@
-function showMsg() {
-    var msg = document.getElementById("msg").value;
-    alert(msg);
+function showUseCases() {
+    var usecaseVisibility = document.getElementById("exampleUseCases").style;
+    if(usecaseVisibility.display == "none") {
+        usecaseVisibility.display = "block";
+    } else {
+        usecaseVisibility.display = "none";
+    }
 }
 
 var b1 = new DrawingBoard({
