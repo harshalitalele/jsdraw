@@ -39,7 +39,6 @@
     }
     
     b.Overlay = function(elemProp) {
-        console.log("overlay created for " + b);
         this.canvas = createOverlay(elemProp);
     };
     

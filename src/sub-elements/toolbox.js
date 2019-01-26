@@ -115,6 +115,8 @@
             canvas.style.display = "none";
         }
         
+        hideCanvas();
+        
         function onMarkerCreatedHandler(marker) {
             hideCanvas();
             allMarkers.push(marker);
