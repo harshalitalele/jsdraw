@@ -15,7 +15,7 @@ gulp.task('clean', function () {
 
 gulp.task('pack-js', function () {
     return gulp.src(['src/drawingboard.js', 'src/sub-elements/toolbox.js', 'src/sub-elements/overlay.js', 'src/sub-elements/actions/action.js', 'src/sub-elements/actions/freeformaction.js'])
-        .pipe(concat('bundle.js'))
+        .pipe(concat('jsdraw.js'))
         .pipe(minifyjs())
         .pipe(stripDebug())
         .pipe(gulp.dest('build'));
