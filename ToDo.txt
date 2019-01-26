@@ -6,12 +6,12 @@ Priority To Do:
 (Done) 3. decorative toolbox
 (Done) 12. update readme.md
 (Done) 13. use royalty free image
+11. gulp build and push
 4. development
 5. onclick color fill markers
 6. save markers in localStorage and show drawing again later
 9. update readme page on github
 10. code comments
-11. gulp build and push
 
 To Do:
 1. have a drawing board class and other classes inside drawingboard class
