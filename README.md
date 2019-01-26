@@ -4,11 +4,11 @@ A library to create freehand components as set of core HTML elements (without HT
 
 ### How to Use:
 
-To make an HTML element drawable, include ```'/bundle.js'``` file as per the [example](https://github.com/harshalitalele/openseadragon-circular-annotation/tree/gh-pages) into the project along with icons, inside ```img/``` folder.
+To make an HTML element drawable, include ```'/jsdraw-min.js'``` file as per the [example](https://github.com/harshalitalele/openseadragon-circular-annotation/tree/gh-pages) into the project along with icons, inside ```img/``` folder.
 
 ```markdown
 
-<script src="bundle.js"></script>
+<script src="jsdraw-min.js"></script>
 
 ```
 
