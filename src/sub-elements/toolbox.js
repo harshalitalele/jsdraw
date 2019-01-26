@@ -27,15 +27,18 @@
         for(var m in options) {
             var mType = options[m],
                 mElem = document.createElement("div"),
-                mStyle = mElem.style;
-            mStyle.height = "32px";
-            mStyle.width = "32px";
+                mStyle = mElem.style,
+                imgElem = new Image();
+            mStyle.height = "26px";
+            mStyle.width = "26px";
             mStyle.margin = "5px";
-            mStyle.border = "1px solid black";
-            mStyle.borderRadius = "4px";
             switch(mType) {
                 case "freeform":
-                    mElem.innerText = "F";
+                    imgElem.src = "img/edit.png";
+                    imgElem.alt = "D";
+                    imgElem.onload = function() {
+                        mElem.appendChild(imgElem);
+                    };
                     mStyle.textAlign = "center";
                     mElem.addEventListener("click", function(e) {
                         onTypeSelected("freeform");
@@ -44,6 +47,8 @@
             }            
             toolbox.appendChild(mElem);
         }
+        var hrLine = document.createElement("hr");
+        toolbox.appendChild(hrLine);
     }
     
     function addButtonControls(options, toolbox) {
@@ -51,20 +56,27 @@
             if(options[c]) {
                 var btn = document.createElement("button"),
                     btnStyle = btn.style;
-                btnStyle.width = "32px";
-                btnStyle.height = "32px";
+                btnStyle.width = "26px";
+                btnStyle.height = "26px";
                 btnStyle.margin = "5px";
-                btnStyle.border = "1px solid black";
-                btnStyle.borderRadius = "4px";
+                btnStyle.border = "none";
+                btnStyle.background = "none";
+                btnStyle.padding = 0;
                 switch(c) {
                     case "saveHandler":
-                        btn.innerText = "S";
+                        var imgElem = new Image();
+                        imgElem.alt = "S";
+                        imgElem.src = "img/save.png";
+                        btn.appendChild(imgElem);
                         btn.addEventListener("click", function(e) {
                             options.saveHandler();
                         });
                         break;
                     case "clearAllHandler":
-                        btn.innerText = "X";
+                        var imgElem = new Image();
+                        imgElem.alt = "X";
+                        imgElem.src = "img/rubbish-bin.png";
+                        btn.appendChild(imgElem);
                         btn.addEventListener("click", function(e) {
                             options.clearAllHandler();
                         });
@@ -78,14 +90,13 @@
     function createToolboxElem(options) {
         var toolboxElem = document.createElement("div");
         tbStyle = toolboxElem.style;
-        tbStyle.backgroundColor = "rgba(255,0,0,0.2)";
+        tbStyle.backgroundColor = "lightgrey";
         tbStyle.width = "auto";
         tbStyle.padding = "5px";
         tbStyle.border = "1px solid black";
-        tbStyle.borderRadius = "5px";
         tbStyle.position = "fixed";
-        tbStyle.top = 0;
-        tbStyle.right = 0;
+        tbStyle.top = "10px";
+        tbStyle.right = "10px";
         
         return toolboxElem;
     }
