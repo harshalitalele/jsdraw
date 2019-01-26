@@ -4,6 +4,17 @@
             #exampleUseCases {
                 display: none;
             }
+            .col-50 {
+                width: 45%;
+                position: relative;
+                float: left;
+                border: 1px solid black;
+                padding: 5px;
+                margin: 5px;
+            }
+            .pointer {
+                cursor: pointer;
+            }
         </style>
         <title>jsdraw</title>
     </head>
@@ -16,9 +27,8 @@
         </div>
         <hr/>
         <div>
-            <b onclick="showUseCases()">Click here to read the example use case</b>
+            <b class="pointer" onclick="showUseCases()">Click here to read the example use case</b>
             <span id="exampleUseCases">
-                <br/>
                 <ul>
                     <li>Doodle over an image element</li>
                     <li>Mark over a blogpost or a webpage to make notes</li>
@@ -26,6 +36,19 @@
             </span>
         </div>
         <hr/>
+        <div>
+            <div class="col-50">
+                Now try dooding over below image with same tool:
+                <br/>
+                <img src="img/Sample-image.jpg" width="500px" height="500px"/>
+            </div>
+            <div class="col-50">
+                <a href="https://github.com/harshalitalele/jsdraw" target="_blank">
+                    Drawings do not block clicking on any HTML links as well. Try this!
+                </a>
+                <br/>
+            </div>
+        </div>
         <div id="libraries">
             <script src="src/drawingboard.js"></script>
             <script src="src/sub-elements/toolbox.js"></script>
