@@ -80,11 +80,10 @@
         tbStyle = toolboxElem.style;
         tbStyle.backgroundColor = "rgba(255,0,0,0.2)";
         tbStyle.width = "auto";
-        tbStyle.height = "60px";
         tbStyle.padding = "5px";
         tbStyle.border = "1px solid black";
         tbStyle.borderRadius = "5px";
-        tbStyle.position = "absolute";
+        tbStyle.position = "fixed";
         tbStyle.top = 0;
         tbStyle.right = 0;
         

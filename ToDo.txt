@@ -2,7 +2,7 @@ Priority To Do:
 (Done) 7. segregate folder structure
 (Done) 2. build process
 (Done) 8. license
-1. Sample webpage on index.html (data - how you can click even after drawing annotations)
+(Done) 1. Sample webpage on index.html (data - how you can click even after drawing annotations)
 3. decorative toolbox
 4. development
 5. onclick color fill markers
